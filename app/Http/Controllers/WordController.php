@@ -72,13 +72,17 @@ class WordController extends Controller
     return redirect('/dictionary');
 }
 
-
-    
-
     public function show(){
 
         $user = auth()->user();
-        $words = $user->words()->get();
+        $words = $user->words()->paginate(10);
         return view('dashboard.history.index', compact('words'));
+    }
+
+    public function destroy($id){
+        $user = auth()->user();
+        $word = Word::find($id);
+        $word->delete();
+        return redirect('/history');
     }
 }

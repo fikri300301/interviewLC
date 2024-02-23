@@ -15,6 +15,9 @@
         <th scope="col">no</th>
       
         <th scope="col">word</th>
+        <th scope="col">Definition</th>
+        <th scope="col">Hapus</th>
+        
       
       </tr>
     </thead>
@@ -27,13 +30,19 @@
     <th>{{ $a++ }}</th>
    
     <td>{{ $word->word }}</td>
-    
+    <td>{{ $word->definition }}</td>
+   <td> <a href="history-delete/{{ $word->id }}"> <button class="btn btn-danger " onclick="return confirm ('are you sure to delete word meaning {{ $word->word}}?')"><i class="bi bi-trash3-fill"></i></button></a></td>
+      
 </tr> 
 @endforeach
        
       
     </tbody>
   </table>
+
+<div>
+  {{ $words->links() }}
+</div>
 </div>
 
 @endsection

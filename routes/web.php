@@ -35,5 +35,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/dictionary',[WordController::class, 'index']);
     Route::post('/dictionary',[WordController::class,'store']);
     Route::get('/history',[WordController::class, 'show']);
+    Route::get('/history-delete/{id}',[WordController::class,'destroy']);
     
 });
