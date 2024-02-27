@@ -41,26 +41,6 @@ class WordDefinition extends Mailable
     }
 
 
-    /**
-     * Get the message envelope.
-     */
-    // public function envelope(): Envelope
-    // {
-    //     return new Envelope(
-    //         subject: 'Word Definition',
-    //     );
-    // }
-
-    /**
-     * Get the message content definition.
-     */
-    // public function content(): Content
-    // {
-    //     return new Content(
-    //         view: 'emails.new_word_definition',
-    //         data: ['word' => $this->word, 'definitions' => $this->definitions],
-    //     );
-    // }
 
     /**
      * Get the attachments for the message.

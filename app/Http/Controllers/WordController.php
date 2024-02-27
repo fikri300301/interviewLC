@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Word;
+use App\Jobs\SendEmail;
 use App\Mail\WordDefinition;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -53,6 +54,10 @@ class WordController extends Controller
 
             //kirim email ke user
             Mail::to($user->email)->send(new WordDefinition($request->word,$definitions));
+
+           // Kirim email menggunakan jobs
+          // SendEmail::dispatch(auth()->id(),$request->word,$definitions);
+
 
             $meanings = [
                 'word' => $word->word,
